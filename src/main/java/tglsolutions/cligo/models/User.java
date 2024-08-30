@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codUs;  // Correspondente ao SERIAL
+    private Long cod_us;  // Correspondente ao SERIAL
 
     @Column(length = 255)
     private String senha;  // Atributo correspondente a password
