@@ -1,4 +1,4 @@
-package tglsolutions.cligo.domain;
+package tglsolutions.cligo.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -17,7 +17,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "categoria")
-public class Categoria {
+public class Category {
 
     @Id
     @Column(name = "id_categoria", length = 4)
@@ -31,5 +31,5 @@ public class Categoria {
 
     @ManyToOne
     @JoinColumn(name = "id_eventos", insertable = false, updatable = false)
-    private Eventos eventos;
+    private Events eventos;
 }

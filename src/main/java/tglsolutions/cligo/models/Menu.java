@@ -1,7 +1,10 @@
-package tglsolutions.cligo.domain;
+package tglsolutions.cligo.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+
+import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
@@ -17,7 +20,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "cardapio")
-public class Cardapio {
+public class Menu {
 
     @Id
     @Column(name = "id_cardapio")
@@ -33,9 +36,9 @@ public class Cardapio {
     private String preco_alimento;
 
     @Column(name = "cod_us")
-    private Integer cod_us;
+    private UUID cod_us;
 
     @ManyToOne
     @JoinColumn(name = "cod_us", insertable = false, updatable = false)
-    private Usuario usuario;
+    private User usuario;
 }

@@ -32,15 +32,16 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody RegisterRequest request) {
-        if (userService.existsByEmail(request.getEmail())) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Email já registrado");
-        }
+    if (userService.existsByEmail(request.getEmail())) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("Email já registrado");
+    }
 
-        String encryptedPassword = passwordEncoder.encode(request.getPassword());
-        User newUser = new User(request.getEmail(), encryptedPassword, "LOCAL");
-        userRepository.save(newUser);
+    String encryptedPassword = passwordEncoder.encode(request.getPassword());
+    // A chamada ao construtor deve funcionar agora
+    User newUser = new User(request.getEmail(), encryptedPassword, "LOCAL");
+    userRepository.save(newUser);
 
-        return ResponseEntity.ok("Usuário registrado com sucesso");
+    return ResponseEntity.ok("Usuário registrado com sucesso");
     }
 
     @PostMapping("/login")
@@ -50,7 +51,7 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas");
         }
 
-        // Autenticar o usuário (pode usar JWT, cookies, etc.)
+        // Aqui você pode gerar um token JWT ou usar outro método de autenticação
         return ResponseEntity.ok("Login realizado com sucesso");
     }
 
@@ -61,12 +62,13 @@ public class AuthController {
 
         User user = userService.findByEmail(googleEmail);
         if (user == null) {
+            // Ajustar a criação do usuário de acordo com os atributos disponíveis
             user = new User(googleEmail, null, "GOOGLE");
-            user.setGoogleId(googleId);
+            user.setGoogleId(googleId); // Certifique-se de que a propriedade `googleId` está presente na classe `User`
             userRepository.save(user);
         }
 
-        // Autenticar o usuário (JWT, cookies, etc.)
+        // Aqui você pode gerar um token JWT ou usar outro método de autenticação
         return ResponseEntity.ok("Autenticação via Google realizada com sucesso");
     }
 }

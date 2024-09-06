@@ -1,7 +1,10 @@
-package tglsolutions.cligo.domain;
+package tglsolutions.cligo.models;
 
 import jakarta.persistence.Entity; 
-import jakarta.persistence.Id; 
+import jakarta.persistence.Id;
+
+import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.ManyToOne; 
 import jakarta.persistence.JoinColumn; 
@@ -24,9 +27,9 @@ public class Cliente_fisico {
     private String cpf;
 
     @Column(name = "cod_us") 
-    private Integer cod_us; 
+    private UUID cod_us; 
 
     @ManyToOne 
     @JoinColumn(name = "cod_us", insertable = false, updatable = false) 
-    private Usuario usuario; 
+    private User usuario; 
 }

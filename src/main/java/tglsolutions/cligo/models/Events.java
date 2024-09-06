@@ -1,7 +1,10 @@
-package tglsolutions.cligo.domain;
+package tglsolutions.cligo.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+
+import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
@@ -16,27 +19,23 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "cidade")
-public class Cidade {
+@Table(name = "eventos")
+public class Events {
 
     @Id
-    @Column(name = "id_cidade", length = 4)
-    private Integer id_cidade;
+    @Column(name = "id_eventos", length = 4)
+    private Integer id_eventos;
 
-    @Column(name = "nome_cidade", nullable = false, length = 50)
-    private String nome_cidade;
+    @Column(name = "organizador", nullable = false, length = 50)
+    private String organizador;
 
-    @Column(name = "id_estado")
-    private Integer id_estado;
+    @Column(name = "descricao", nullable = false, length = 50)
+    private String descricao;
 
     @Column(name = "cod_us")
-    private Integer cod_us;
-
-    @ManyToOne
-    @JoinColumn(name = "id_estado", insertable = false, updatable = false)
-    private Estado estado;
+    private UUID cod_us;
 
     @ManyToOne
     @JoinColumn(name = "cod_us", insertable = false, updatable = false)
-    private Usuario usuario;
+    private User usuario;
 }

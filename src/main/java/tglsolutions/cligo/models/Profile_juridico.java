@@ -1,7 +1,10 @@
-package tglsolutions.cligo.domain;
+package tglsolutions.cligo.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+
+import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
@@ -11,27 +14,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Date;
-
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "presença")
-public class Presenca {
+@Table(name = "perfil_juridico")
+public class Profile_juridico {
 
     @Id
-    @Column(name = "id_presença", length = 4)
-    private Integer id_presenca;
+    @Column(name = "id_perfil_juridico")
+    private Integer id_perfil_juridico;
 
     @Column(name = "cod_us")
-    private Integer cod_us;
-
-    @Column(name = "data_confirmação")
-    private Date data_confirmacao;
+    private UUID cod_us;
 
     @ManyToOne
     @JoinColumn(name = "cod_us", insertable = false, updatable = false)
-    private Usuario usuario;
+    private User usuario;
 }

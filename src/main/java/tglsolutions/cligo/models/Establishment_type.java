@@ -1,4 +1,4 @@
-package tglsolutions.cligo.domain;
+package tglsolutions.cligo.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -17,7 +17,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tipo_estabelecimento")
-public class Tipo_estabelecimento {
+public class Establishment_type {
 
     @Id
     @Column(name = "id_tipo_estabelecimento")
@@ -34,5 +34,5 @@ public class Tipo_estabelecimento {
 
     @ManyToOne
     @JoinColumn(name = "id_perfil_juridico", insertable = false, updatable = false)
-    private Perfil_juridico perfil_juridico;
+    private Profile_juridico perfil_juridico;
 }
