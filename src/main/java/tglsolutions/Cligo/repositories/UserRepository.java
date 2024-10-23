@@ -1,7 +1,8 @@
 package tglsolutions.Cligo.repositories;
 
-import tglsolutions.Cligo.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import tglsolutions.Cligo.domain.User;
 
 import java.util.Optional;
 

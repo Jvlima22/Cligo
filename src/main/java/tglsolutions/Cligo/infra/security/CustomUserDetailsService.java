@@ -1,6 +1,6 @@
 package tglsolutions.Cligo.infra.security;
 
-import tglsolutions.Cligo.domain.user.User;
+import tglsolutions.Cligo.domain.User;
 import tglsolutions.Cligo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

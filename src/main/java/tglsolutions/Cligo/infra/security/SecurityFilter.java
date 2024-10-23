@@ -1,6 +1,6 @@
 package tglsolutions.Cligo.infra.security;
 
-import tglsolutions.Cligo.domain.user.User;
+import tglsolutions.Cligo.domain.User;
 import tglsolutions.Cligo.repositories.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

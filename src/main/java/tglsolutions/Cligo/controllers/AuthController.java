@@ -1,6 +1,6 @@
 package tglsolutions.Cligo.controllers;
 
-import tglsolutions.Cligo.domain.user.User;
+import tglsolutions.Cligo.domain.User;
 import tglsolutions.Cligo.dto.LoginRequestDTO;
 import tglsolutions.Cligo.dto.RegisterRequestDTO;
 import tglsolutions.Cligo.dto.ResponseDTO;

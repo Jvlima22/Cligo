@@ -1,4 +1,6 @@
-package tglsolutions.Cligo.domain.user;
+package tglsolutions.Cligo.domain;
+
+import java.util.UUID;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,19 +9,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
+@Table(name = "perfil_juridico")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Perfil_Juridico {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-    private String name;
-    private String email;
-    private String password;
-    private String phone;
-    private String cpf;
-    private String cnpj;
+    private UUID id_perfil_juridico;
+    @ManyToOne
+    @JoinColumn(name = "cod_us", referencedColumnName = "cod_us")
+    private User cod_us;
 }
