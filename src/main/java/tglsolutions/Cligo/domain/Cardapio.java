@@ -1,6 +1,5 @@
 package tglsolutions.Cligo.domain;
 
-import java.util.UUID;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
