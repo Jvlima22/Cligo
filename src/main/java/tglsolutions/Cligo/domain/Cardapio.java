@@ -16,8 +16,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Cardapio {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_cardapio;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_cardapio;
     @ManyToOne
     @JoinColumn(name = "cod_us", referencedColumnName = "cod_us")
     private User cod_us;

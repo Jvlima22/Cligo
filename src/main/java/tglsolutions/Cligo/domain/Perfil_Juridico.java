@@ -16,8 +16,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Perfil_Juridico {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_perfil_juridico;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_perfil_juridico;
     @ManyToOne
     @JoinColumn(name = "cod_us", referencedColumnName = "cod_us")
     private User cod_us;

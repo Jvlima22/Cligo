@@ -16,8 +16,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Cidade {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_cidade;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_cidade;
     @ManyToOne
     @JoinColumn(name = "cod_us", referencedColumnName = "cod_us")
     private User cod_us;

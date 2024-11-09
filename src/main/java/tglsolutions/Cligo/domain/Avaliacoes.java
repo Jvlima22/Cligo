@@ -1,7 +1,6 @@
 package tglsolutions.Cligo.domain;
 
 import java.sql.Date;
-import java.util.UUID;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,8 +16,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Avaliacoes {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_avaliacao;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_avaliacao;
     private String avaliador_juridico;
     private String avaliador_fisico;
     @ManyToOne

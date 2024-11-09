@@ -16,8 +16,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Telefone {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_telefone;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_telefone;
     private int ddd;
     private int dd;
     @ManyToOne

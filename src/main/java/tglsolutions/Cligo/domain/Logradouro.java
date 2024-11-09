@@ -16,8 +16,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Logradouro {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_logradouro;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_logradouro;
     private String cep;
     private String nome_logradouro;
     private String numero;

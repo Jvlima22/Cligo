@@ -17,8 +17,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Mensagens {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_mensagem;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_mensagem;
     @ManyToOne
     @JoinColumn(name = "destinatario_mensagem", referencedColumnName = "cod_us")
     private User destinatario_mensagem;

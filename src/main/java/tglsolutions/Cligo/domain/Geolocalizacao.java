@@ -16,8 +16,8 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Geolocalizacao {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_geolocalizacao;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_geolocalizacao;
     @ManyToOne
     @JoinColumn(name = "cod_us", referencedColumnName = "cod_us")
     private User cod_us;

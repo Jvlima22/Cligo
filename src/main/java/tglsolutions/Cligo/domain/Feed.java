@@ -16,8 +16,8 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Feed {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_feed;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_feed;
     private String curtidas;
     private String comentarios;
     @ManyToOne

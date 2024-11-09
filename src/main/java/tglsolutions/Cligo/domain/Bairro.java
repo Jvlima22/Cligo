@@ -16,15 +16,12 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Bairro {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_logradouro;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_bairro;
     private String cep;
     private String nome_logradouro;
     private String numero;
     @ManyToOne
     @JoinColumn(name = "cod_us", referencedColumnName = "cod_us")
     private User cod_us;
-    @ManyToOne
-    @JoinColumn(name = "id_bairro", referencedColumnName = "id_bairro")
-    private Bairro id_bairro;
 }

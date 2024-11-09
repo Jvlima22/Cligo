@@ -16,8 +16,8 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Interesse {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_interesse;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_interesse;
     private String tipo_de_bar;
     @ManyToOne
     @JoinColumn(name = "cod_us", referencedColumnName = "cod_us")

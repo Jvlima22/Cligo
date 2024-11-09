@@ -16,8 +16,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Categoria {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id_categoria;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_categoria;
     @ManyToOne
     @JoinColumn(name = "id_eventos", referencedColumnName = "id_eventos")
     private Eventos id_eventos;
